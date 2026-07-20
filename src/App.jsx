@@ -6,7 +6,7 @@ import Layout from "./components/Layout.jsx";
 import CatalogPage from "./pages/CatalogPage.jsx";
 import ProductDetailPage from "./pages/ProductDetailPage.jsx";
 import CartPage from "./pages/CartPage.jsx";
-import CheckoutPage from "./pages/CheckoutPage.jsx";
+import CheckoutPage from "./pages/CheckoutPage.jsx";  
 import NotFoundPage from "./pages/NotFoundPage.jsx";
 
 export default function App() {
