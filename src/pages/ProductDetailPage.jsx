@@ -1,9 +1,8 @@
 
-
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { useFetch } from '../hooks/useFetch';
-import { useCart } from '../hooks/useCart';
+import { useFetch } from '../hooks/useFetch.js';
+import { useCart } from '../hooks/useCart.js';
 
 export default function ProductDetailPage() {
   const { id } = useParams();
@@ -14,7 +13,7 @@ export default function ProductDetailPage() {
   const handleQuantityChange = (amount) => {
     setQuantity((prev) => Math.max(1, prev + amount));
   };
-
+  
   if (loading) return <div className="page-state">Loading product details...</div>;
   if (error || !product) {
     return (
@@ -24,7 +23,7 @@ export default function ProductDetailPage() {
       </div>
     );
   }
-
+  
   return (
     <div className="detail-page-container">
       <Link to="/" className="back-link">&lt; Back to results</Link>
@@ -45,7 +44,7 @@ export default function ProductDetailPage() {
               <button onClick={() => handleQuantityChange(1)}>+</button>
             </div>
           </div>
-
+          
           <button onClick={() => addToCart(product, quantity)} className="detail-add-btn">
             Add to cart
           </button>

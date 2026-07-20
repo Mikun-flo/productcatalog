@@ -4,6 +4,7 @@ import { useFetch } from "../hooks/useFetch.js";
 import { FilterBar } from "../components/FilterBar.jsx";
 import { ProductCard } from "../components/ProductCard.jsx";
 
+
 export default function CatalogPage() {
   const { data, loading, error } = useFetch(
     "https://dummyjson.com/products?limit=0", 

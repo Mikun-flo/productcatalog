@@ -1,4 +1,4 @@
-// src/context/CartContext.jsx
+
 import React, { createContext, useState, useEffect } from "react";
 import { toast } from "react-toastify";
 
