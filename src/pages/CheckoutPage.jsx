@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useCart } from '../hooks/useCart';
+import { useCart } from '../hooks/useCart.js';
 import { toast } from 'react-toastify';
-export function CheckoutPage() {
+
+export default function CheckoutPage() {
   const { cartItems, totalPrice, clearCart } = useCart();
   const navigate = useNavigate();
   const [isOrdered, setIsOrdered] = useState(false);
