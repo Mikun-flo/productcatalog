@@ -1,4 +1,4 @@
-// src/components/CartItem.jsx
+
 import React from "react";
 import { useCart } from "../hooks/useCart.js";
 
