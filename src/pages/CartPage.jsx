@@ -13,7 +13,7 @@ export default function CartPage() {
       <div className="empty-cart-state">
         <h2>Your cart is empty</h2>
         <p>Looks like you haven't added anything to your cart yet.</p>
-        <Link to="/" className="catalog-link-btn">Go Shop</Link>
+        <Link to="/" className="catalog-link-btn">Go to Shopfront</Link>
       </div>
     );
   }

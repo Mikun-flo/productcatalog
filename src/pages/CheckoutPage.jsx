@@ -33,7 +33,7 @@ export default function CheckoutPage() {
     // Simulate order placement
     setIsOrdered(true);
     clearCart(); // Empties cart state
-    toast.success("Order placed successfully!");
+    toast.success("Your Order has been placed successfully!");
   };
   if (isOrdered) {
     return (

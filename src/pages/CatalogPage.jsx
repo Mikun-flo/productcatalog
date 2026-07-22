@@ -36,7 +36,7 @@ export default function CatalogPage() {
       const max = parseFloat(filters.maxPrice);
       const matchesMinPrice = isNaN(min) || product.price >= min;
       const matchesMaxPrice = isNaN(max) || product.price <= max;
-
+      
       return (
         matchesSearch && matchesCategory && matchesMinPrice && matchesMaxPrice
       );
