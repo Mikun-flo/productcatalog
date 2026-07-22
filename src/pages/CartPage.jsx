@@ -17,7 +17,7 @@ export default function CartPage() {
       </div>
     );
   }
- 
+  
   return (
     <div className="cart-page-container">
       <h2>Your cart</h2>
@@ -40,3 +40,6 @@ export default function CartPage() {
     </div>
   );
 }
+
+
+

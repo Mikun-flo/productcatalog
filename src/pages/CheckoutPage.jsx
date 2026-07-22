@@ -13,7 +13,7 @@ export default function CheckoutPage() {
     address: "",
   });
 
-  // Redirect if cart is empty and order hasn't been completed yet
+  // Redirect if cart is empty and order hasn't been completed yet  
   useEffect(() => {
     if (cartItems.length === 0 && !isOrdered) {
       navigate("/cart", { replace: true });
@@ -48,7 +48,7 @@ export default function CheckoutPage() {
         </button>
       </div>
     );
-  }
+  } 
   return (
     <div className="checkout-page-container">
       <div className="checkout-split">
