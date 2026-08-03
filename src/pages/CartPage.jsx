@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../hooks/useCart.js';
@@ -6,7 +5,7 @@ import { CartItem } from '../components/CartItem.jsx';
 
 export default function CartPage() {
   const { cartItems, totalPrice } = useCart();
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
   
   if (cartItems.length === 0) {
     return (
@@ -17,6 +16,7 @@ export default function CartPage() {
       </div>
     );
   }
+  
   
   return (
     <div className="cart-page-container">

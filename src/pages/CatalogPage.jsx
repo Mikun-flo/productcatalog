@@ -1,27 +1,26 @@
-
 import React, { useState, useMemo } from "react";
 import { useFetch } from "../hooks/useFetch.js";
 import { FilterBar } from "../components/FilterBar.jsx";
 import { ProductCard } from "../components/ProductCard.jsx";
 
-
 export default function CatalogPage() {
   const { data, loading, error } = useFetch(
     "https://dummyjson.com/products?limit=0", 
-  );
+  ); 
+  
   const [filters, setFilters] = useState({
     search: "",
     category: "all",
     minPrice: "",
     maxPrice: "",
   });
-
+  
   // Calculate categories from fetched product list
   const categories = useMemo(() => {
     if (!data?.products) return [];
     return [...new Set(data.products.map((p) => p.category))];
   }, [data]);
-
+  
   // Combine and apply all filters in a single filter block/page
   const filteredProducts = useMemo(() => {
     if (!data?.products) return [];
