@@ -101,3 +101,199 @@ body {
   gap: 0.5rem;
   margin-top: 0.5rem;
 }
+.price-inputs input {
+  width: 50%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}
+.clear-filters-btn {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid var(--border-color);
+  background-color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.product-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+.image-wrapper {
+  aspect-ratio: 1;
+  background-color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+.card-info {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.card-info h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  flex-grow: 1;
+}
+.add-to-cart-btn, .detail-add-btn, .checkout-btn, .place-order-btn, .catalog-link-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+.add-to-cart-btn:hover, .detail-add-btn:hover, .checkout-btn:hover, .place-order-btn:hover, .catalog-link-btn:hover {
+  background-color: var(--primary-hover);
+}
+/* Detail Page Layout */
+.detail-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  margin-top: 1.5rem;
+}
+@media (max-width: 768px) {
+  .detail-card {
+    grid-template-columns: 1fr;
+  }
+}
+.detail-image-wrapper {
+  aspect-ratio: 4/3;
+  background-color: #f1f5f9;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.detail-image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  width: fit-content;
+  background-color: white;
+}
+.quantity-controls button {
+  border: none;
+  background: transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.quantity-controls button:disabled {
+  color: #cbd5e1;
+  cursor: not-allowed;
+}
+.qty-value {
+  padding: 0 1rem;
+  font-weight: 600;
+}
+/* Cart & Checkout Layout */
+.cart-content, .checkout-split {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 2rem;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .cart-content, .checkout-split {
+    grid-template-columns: 1fr;
+  }
+}
+.cart-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+.item-details {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.cart-item-thumb {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  background-color: #f1f5f9;
+}
+.item-quantity-subtotal {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.remove-btn {
+  border: none;
+  background: transparent;
+  color: var(--text-light);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.cart-summary-box, .order-summary-card, .shipping-form {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.total-row, .summary-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.form-field input, .form-field textarea {
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  font-family: inherit;
+}
