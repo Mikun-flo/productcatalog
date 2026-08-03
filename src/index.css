@@ -47,3 +47,57 @@ body {
 .nav-links a.active {
   color: var(--primary-color);
 }
+.nav-cart {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.cart-badge {
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  font-weight: 700;
+}
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: calc(100vh - 80px);
+}
+
+/* Catalog Grid Layout */
+.catalog-container {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  .catalog-container {
+    grid-template-columns: 1fr;
+  }
+}
+.filter-sidebar {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  align-self: start;
+}
+.filter-group {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.filter-group input, .filter-group select {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}
+.price-inputs {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
