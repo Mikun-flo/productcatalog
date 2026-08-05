@@ -14,7 +14,7 @@ export default function CatalogPage() {
   
   // Pagination 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10; // Number of items shown per page
+  const itemsPerPage = 12; // Number of items shown per page
 
   // Calculate unique categories from fetched product list
   const categories = useMemo(() => {
@@ -57,6 +57,7 @@ export default function CatalogPage() {
     // Smooth scroll to top of list
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
 
   if (loading) return <CatalogSkeleton />; // Premium skeleton layout
   if (error) return <div className="page-state error">Failed to load catalog. Please try again.</div>;

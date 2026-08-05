@@ -4,7 +4,7 @@
 :root {
   --primary-color: #4f46e5;       /* Indigo */
   --primary-hover: #4338ca;
-  --secondary-color: #10b981;     /* Emerald Accent */
+  --secondary-color: #10b981;     /* Emerald */
   --bg-color: #f8fafc;            /* Clean light grey */
   --card-bg: #ffffff;
   --text-dark: #0f172a;           /* Deep dark slate */
@@ -135,7 +135,8 @@ body {
   gap: 0.5rem;
 }
 
-.filter-group label {
+.filter-group label,
+.filter-group-price label {
   font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -143,7 +144,9 @@ body {
   color: var(--text-light);
 }
 
-.filter-group input, .filter-group select {
+.filter-group input,
+.filter-group select,
+.filter-group-price .price-inputs input {
   padding: 0.75rem 1rem;
   border-radius: 10px;
   border: 1px solid var(--border-color);
@@ -154,7 +157,19 @@ body {
   transition: all 0.2s ease;
 }
 
-.filter-group input:focus, .filter-group select:focus {
+.filter-group-price .price-inputs {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.filter-group-price .price-inputs input {
+  flex: 1;
+  min-width: 0;
+}
+
+.filter-group input:focus,
+.filter-group select:focus,
+.filter-group-price .price-inputs input:focus {
   outline: none;
   border-color: var(--primary-color);
   background-color: white;
@@ -163,6 +178,7 @@ body {
 
 .clear-filters-btn {
   width: 100%;
+  margin-top: 1rem;
   padding: 0.8rem;
   border: 1px solid var(--border-color);
   background-color: white;
