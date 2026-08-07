@@ -1,30 +1,19 @@
-
-import React, { createContext, useState, useEffect } from "react";
-import { toast } from "react-toastify";
+import React, { createContext, useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 export const CartContext = createContext();
 
-export function CartProvider({ children }) {
+export default function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState(() => {
     try {
-      const savedCart = localStorage.getItem("cart");
+      const savedCart = sessionStorage.getItem("cart");
       return savedCart ? JSON.parse(savedCart) : [];
     } catch (error) {
-      console.error("Failed to parse cart state from localStorage:", error);
+      console.error("Failed to parse cart state from sessionStorage:", error);
       return [];
     }
   });
-
-  // Sync to localStorage on change
-  useEffect(() => {
-    try {
-      localStorage.setItem("cart", JSON.stringify(cartItems));
-    } catch (error) {
-      console.error("Failed to save cart state to localStorage:", error);
-    }
-  }, [cartItems]);
-
-  // Derived state calculations (Calculated on the fly, NOT saved in state)
+  // Derived state calculations (At render time)
   const totalItemCount = cartItems.reduce(
     (acc, item) => acc + item.quantity,
     0,
@@ -33,15 +22,13 @@ export function CartProvider({ children }) {
     (acc, item) => acc + item.price * item.quantity,
     0,
   );
-
   const addToCart = (product, quantity = 1) => {
     setCartItems((prevItems) => {
       const existingItemIndex = prevItems.findIndex(
         (item) => item.id === product.id,
       );
-
       if (existingItemIndex > -1) {
-        // Merge item quantity
+        // Merge quantity
         const updatedItems = [...prevItems];
         updatedItems[existingItemIndex] = {
           ...updatedItems[existingItemIndex],
@@ -62,17 +49,14 @@ export function CartProvider({ children }) {
         ];
       }
     });
-
     toast.success(`Added ${product.title} to cart!`);
   };
-
   const removeFromCart = (productId, title) => {
     setCartItems((prevItems) =>
       prevItems.filter((item) => item.id !== productId),
     );
     toast.info(`Removed ${title || "item"} from cart.`);
   };
-
   const updateQuantity = (productId, newQuantity) => {
     if (newQuantity < 1) return;
     setCartItems((prevItems) =>
@@ -81,11 +65,9 @@ export function CartProvider({ children }) {
       ),
     );
   };
-
   const clearCart = () => {
     setCartItems([]);
   };
-
   return (
     <CartContext.Provider
       value={{
@@ -102,5 +84,3 @@ export function CartProvider({ children }) {
     </CartContext.Provider>
   );
 }
-
-export default CartProvider;

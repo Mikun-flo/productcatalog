@@ -9,7 +9,7 @@ export function Header() {
   return (
     <header className="site-header">
       <div className="header-container">
-        <Link to="/" className="logo">Shopfront</Link>
+        <Link to="/" className="logo">Mikun's Shopfront</Link> 
         <nav className="nav-links">
           <NavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink>
           <NavLink to="/cart" className={({ isActive }) => (isActive ? 'active' : 'nav-cart')}>
