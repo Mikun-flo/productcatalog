@@ -12,8 +12,7 @@ export default function Layout() {
         <footer className="site-footer">
           <div className="footer-content">
             <p>
-              &copy; 2026 Mikun's Product Catalog. All Rights Reserved. Built with React
-              and DummyJSON API.
+              &copy; 2026 Mikun's Product Catalog. All Rights Reserved.
             </p>
           </div>
         </footer>
